@@ -73,6 +73,7 @@
                 return li;
             };
         })();
+
         window.onload = function () {
             test("Async Test #1", function () {
                 pause();
@@ -94,7 +95,9 @@
             test("Ninja Constructor test #1",createNinjasTest);
             test("Call and Apply Usage test #1",applyAndCallTest);
             test("Testing custom forEach with a callback #1",forEachAndCallbackTest);
-            
+            test("Anonymous Functions Test #1",anonFunctionsTest);
+            test("Recursion test #1",palindromeTest);
+            test("Recursion test #2",recursionTest2);
             
         };
     
