@@ -98,6 +98,8 @@
             test("Anonymous Functions Test #1",anonFunctionsTest);
             test("Recursion test #1",palindromeTest);
             test("Recursion test #2",recursionTest2);
+            test("Recursion test #3 - inline Functions",recursionTest3);
+            test("Inline Function Identity Test #1",inlineFunctionIdentityTest);
             
         };
     
