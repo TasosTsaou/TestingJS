@@ -100,6 +100,8 @@
             test("Recursion test #2",recursionTest2);
             test("Recursion test #3 - inline Functions",recursionTest3);
             test("Inline Function Identity Test #1",inlineFunctionIdentityTest);
+            test("Storing Functions Test #1",functionStore);
+            test("Self Memoizing Functions test #1",memoPrecomputedValuesTest);
             
         };
     

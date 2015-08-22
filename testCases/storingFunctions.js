@@ -11,6 +11,7 @@
         add: function (fn) {
             if (!fn.id) {
                 fn.id = store.nextId++;
+                //The !! construct is a simple way of turning any JavaScript expression into its Boolean equivalent.
                 return !!(store.cache[fn.id] = fn);
             }
         }
