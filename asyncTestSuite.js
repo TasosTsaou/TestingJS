@@ -10,6 +10,8 @@
     var queue = [],
         paused = false,
         results;
+    window.tests = {};
+
     //            /*
     //            test() takes a function that contains a number of assertions—assertions that
     //will be run either synchronously or asynchronously—and places it on the queue
@@ -106,5 +108,6 @@ window.onload = function () {
     test("Traversing variable-length argument lists #1", traversingVarArgLists);
     test("Slicing the arguments list test #1", slicingArgsList);
     test("Function's length property Test #1", functionsLengthProperty);
+    test("Method-overloading function test #1", tests.addMethodFunctionTest);
 
 };
