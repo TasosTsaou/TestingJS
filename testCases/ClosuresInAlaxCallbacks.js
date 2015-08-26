@@ -1,0 +1,5 @@
+(window.closuresInAjaxCallbacks = function closuresInAjaxCallbacks() {
+
+
+
+})

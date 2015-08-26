@@ -109,8 +109,9 @@ window.onload = function () {
     test("Slicing the arguments list test #1", slicingArgsList);
     test("Function's length property Test #1", functionsLengthProperty);
     test("Method-overloading function test #1", tests.addMethodFunctionTest);
-    test("Closure test #1",tests.simpleClosure);
-    test("Closure test #2",tests.notSoSimpleClosure);
-    test("Closure Concepts test #3",tests.closureConcepts);
+    test("Closure test #1", tests.simpleClosure);
+    test("Closure test #2", tests.notSoSimpleClosure);
+    test("Closure Concepts test #3", tests.closureConcepts);
+    test("Closure Private variables test #4", tests.privateVarsWithClosures);
 
 };
