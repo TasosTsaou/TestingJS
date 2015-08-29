@@ -75,7 +75,7 @@
     };
 })();
 
-window.onload = function () {
+$(document).ready(function () {
     test("Async Test #1", function () {
         pause();
         setTimeout(function () {
@@ -113,5 +113,8 @@ window.onload = function () {
     test("Closure test #2", tests.notSoSimpleClosure);
     test("Closure Concepts test #3", tests.closureConcepts);
     test("Closure Private variables test #4", tests.privateVarsWithClosures);
+    test("Closure test #5, Prototype Bind example", tests.prototypeBind);
+    test("Closure test #6, currying - partial applying of function arguments", tests.curryingExample);
 
-};
+
+})

@@ -29,6 +29,9 @@
     <script src="./testCases/notSoSimpleClosure.js"></script>
     <script src="./testCases/closureConcepts.js"></script>
     <script src="./testCases/privateVarsWithClosures.js"></script>
+    <script src="./testCases/closureIntervalCallback.js"></script>
+    <script src="./testCases/prototypeBindExample.js"></script>
+    <script src="./testCases/curryingExample.js"></script>
 
 
     <style>
@@ -51,6 +54,42 @@
     <div id="testSubject"></div>
     <button type="button" id="testButton">Go!</button>
 
+    <div id="box"> ボックス </div>
+    <button id="test">Click Me!</button>
+
+    <script type="text/javascript">
+        //Binding a specific context to an event handler
+
+        //        Defines a “binding”
+        //function that wraps a
+        //call to the method of an
+        //object within another
+        function bind(context, name) {
+            return function () {
+                return context[name].apply(context, arguments);
+            };
+        }
+
+        //Binding a specific context to a function.
+
+        //        Defines an object to retain state regarding //our button. With it, we’ll track whether the //button has been clicked or not.
+        var button = {
+            clicked: false,
+            //            Declares the method that we’ll use as the click handler. //Because it’s a method of the object, we use this within //the function to get a reference to the object.
+            click: function () {
+                this.clicked = true;
+                //                Within the method, we test //that the button state has been correctly changed //after a click.
+                assert(button.clicked, "The button has been clicked");
+            }
+        };
+        //        Establishes the click //handler on the button.
+        var elem = document.getElementById("test");
+        //elem.addEventListener("click", button.click, false);
+
+        //        Uses the binding //function to bind //the button object //as the context of //the handler
+        elem.addEventListener("click", bind(button, "click"), false);
+    </script>
+
     <script>
         ; //Establishes a click handler on the test button. This function passed to the click() method will be called whenever the button is clicked.
         $('#testButton').click(function () {
@@ -71,6 +110,40 @@
                 }
             });
         })
+    </script>
+
+    <script>
+        window.animateIt = function animateIt(elementId) {
+
+            //Inside the animateIt() function, we get a reference to that element.
+            var elem = document.getElementById(elementId);
+            //Establishes a counter to keep track of animation ticks (steps).
+            var tick = 0;
+
+            //Creates and starts an interval timer given a callback function that will be invoked every 10 milliseconds. For 100 ticks it will adjust the position of the element.
+            var timer = setInterval(function () {
+                console.log("moving div...");
+                if (tick < 100) {
+                    elem.style.left = elem.style.top = tick + "px";
+                    tick++;
+                } else {
+                    /*
+                    After 100 ticks we stop the timer and perform
+                    tests to assert that we can see all relevant variables needed to
+                    perform the animation.
+                    */
+                    console.log("asserting...");
+                    clearInterval(timer);
+                    assert(tick == 100, "Tick accessed via a closure.");
+                    assert(elem, "Element also accessed via a closure.");
+                    assert(timer, "Timer reference also obtained via a closure.");
+                }
+
+            }, 10);
+        }
+
+        //Now that it’s all set up, we set it in motion!
+        animateIt('box');
     </script>
 </body>
 
