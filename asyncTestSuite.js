@@ -115,6 +115,8 @@ $(document).ready(function () {
     test("Closure Private variables test #4", tests.privateVarsWithClosures);
     test("Closure test #5, Prototype Bind example", tests.prototypeBind);
     test("Closure test #6, currying - partial applying of function arguments", tests.curryingExample);
+    test("Overriding function behavior test #1 - Memoization", tests.memoization);
+    test("Overriding function behavior test #2 - Memoization using Closure", tests.memoizationUsingClosures);
 
 
 })
