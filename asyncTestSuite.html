@@ -58,6 +58,18 @@
     <div id="box"> ボックス </div>
     <button id="test">Click Me!</button>
 
+    <div>DIV 2</div>
+    <div>DIV 3</div>
+    
+    <script type="text/javascript">
+        var div = document.getElementsByTagName("div");
+        for (var i = 0; i < div.length; i++)(function (n) {
+            div[n].addEventListener("click", function () {
+                alert("div #" + n + " was clicked.");
+            }, false);
+        })(i);
+    </script>
+    
     <script type="text/javascript">
         //Binding a specific context to an event handler
 
