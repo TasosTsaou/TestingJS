@@ -117,6 +117,11 @@ $(document).ready(function () {
     test("Closure test #6, currying - partial applying of function arguments", tests.curryingExample);
     test("Overriding function behavior test #1 - Memoization", tests.memoization);
     test("Overriding function behavior test #2 - Memoization using Closure", tests.memoizationUsingClosures);
-
+    test("Prototyping test #1 - Creating new instance", tests.prototypeTest);
+    test("Prototyping test #2 - Observing the precedence of initialization activities", tests.prototypeTest2);
+    test("Prototyping test #3 - Observing the behavior of changes to the prototype", tests.prototypeTest3);
+    test("Prototyping test #4 - Further observing the behavior of changes to the prototype", tests.prototypeTest4);
+    test("Prototyping test #5 - Examining the type of an instance and its constructor", tests.prototypeTest5);
+    test("Prototyping test #6 - Instantiating a new object using a reference to a constructor", tests.prototypeTest6);
 
 })
